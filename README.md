@@ -36,26 +36,15 @@ Download the latest `WPSToLatex.xlam` from the [Releases](../../releases) page a
 
 ### 第二步：在 WPS 中加载宏文件 | Step 2 – Load the macro file in WPS
 
-1. 打开 **WPS 表格**（WPS Spreadsheets）。
+1. 用 **WPS 表格**（WPS Spreadsheets）打开给定的 `.xlam` 宏文件。
 2. 点击顶部菜单 **工具（Tools）** → **选项（Options）**。
 3. 在弹出的「选项」对话框中，选择左侧的 **自定义功能区（Customize Ribbon）** 选项卡。
-4. 点击对话框右下角的 **导入/导出（Import/Export）** 或直接点击 **添加宏（Add Macro）** 按钮，浏览并选中刚才下载的 `WPSToLatex.xlam` 文件。
+4. 点击对话框上方 **从下列位置选择命令**，点击 **宏**，找到 **WPSToLatex**。
 5. 在「自定义功能区」界面中，将 `WPSToLatex` 相关命令从左侧命令列表拖拽（或通过「添加>>」按钮）添加到右侧的目标选项卡 / 组中。
+> 可以添加到已有选项卡中，也可以自己新建
 6. 点击 **确定（OK）** 保存设置。
 
 完成后，您将在 WPS 表格的功能区看到新增的 **WPSToLatex** 按钮。
-
----
-
-#### 图示步骤（Windows 系统）| Screenshot guide (Windows)
-
-| 步骤 | 操作 |
-|------|------|
-| ① | 工具 → 选项 |
-| ② | 左侧列表选择「自定义功能区」|
-| ③ | 在右侧新建或选择一个选项卡/组 |
-| ④ | 从左侧「宏」类别找到 `WPSToLatex`，点击「添加>>」|
-| ⑤ | 确定 |
 
 ---
 
@@ -63,7 +52,7 @@ Download the latest `WPSToLatex.xlam` from the [Releases](../../releases) page a
 
 1. 在 WPS 表格中，**选中**需要转换的表格区域（可包含合并单元格和边框）。
 2. 点击功能区中的 **WPSToLatex** 按钮。
-3. 弹出对话框中将显示生成的 LaTeX 代码，**全选并复制**即可。
+3. 弹出对话框，**LaTeX 已复制到剪贴板！文本长度：XXX**，成功！
 4. 将代码粘贴到您的 `.tex` 文件中使用。
 
 ---
@@ -93,16 +82,9 @@ A & B & C \\
 
 ---
 
-## 常见问题 | FAQ
+## 测试平台 | Tested Platforms
 
-**Q: 宏加载后功能区看不到按钮？**  
-A: 请确认已在「自定义功能区」中将命令添加到了可见的选项卡和组，并点击了「确定」。
-
-**Q: 转换后中文字符乱码？**  
-A: LaTeX 文档请确保使用 `\usepackage[UTF8]{ctex}` 或 `\usepackage{CJKutf8}` 以支持中文。
-
-**Q: 支持 macOS 版 WPS 吗？**  
-A: 理论上支持，加载步骤相同，但菜单路径可能略有差异（**WPS 表格** 菜单 → **偏好设置** → **自定义功能区**）。
+WPS Office 2026 v12.1.2.25838（Zorin OS 18 based on Ubuntu 24.04, Linux）
 
 ---
 
