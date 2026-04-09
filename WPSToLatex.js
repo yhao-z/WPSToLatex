@@ -11,7 +11,6 @@
  *   - 合并单元格 → \multirow 和 \multicolumn
  *   - 加粗/斜体 → \textbf{} / \textit{}
  *   - 水平对齐 → 列对齐方式 l/c/r
- *   - 标题行（第一行）→ 作为 caption
  * 
  * 需要 LaTeX 导言区添加：\usepackage{multirow}
  */

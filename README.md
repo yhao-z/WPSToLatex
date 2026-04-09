@@ -17,9 +17,11 @@
 ## 功能特性 | Features
 
 - ✅ 将 WPS 表格中的选区转换为 LaTeX `tabular` 环境代码
-- ✅ 保留单元格合并（`\multirow`、`\multicolumn`）
-- ✅ 支持边框线（`\hline`、`\cline`）
-- ✅ 以对话框形式展示生成的 LaTeX 代码，可直接复制
+- ✅ 加粗/斜体转换为 `\textbf{}, \textit{}`
+- ✅ 列对齐方式转换为 `l/c/r`
+- ✅ 保留单元格合并`\multirow`、`\multicolumn`
+- ✅ 支持边框线 `\hline`，`|`
+- ✅ 直接复制到剪贴板，无需手动复制代码
 - ✅ 基于 WPS JS 宏，无需安装额外运行时
 
 ---
