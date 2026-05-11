@@ -1,4 +1,4 @@
-/**
+﻿/**
  * WPS 表格选中区域 -> LaTeX (三线表通用版)
  *
  * Usage: select range -> DevTools -> Run macro -> WPSToLatex

@@ -20,8 +20,7 @@
 - ✅ 加粗/斜体转换为 `\textbf{}, \textit{}`
 - ✅ 列对齐方式转换为 `l/c/r`
 - ✅ 保留单元格合并`\multirow`、`\multicolumn`
-- ✅ 支持边框线 `\hline`，`|`
-- ✅ 直接复制到剪贴板，无需手动复制代码
+- ✅ 支持三线表 `\toprule` / `\midrule` / `\bottomrule`（booktabs），自动检测合并单元格
 - ✅ 基于 WPS JS 宏，无需安装额外运行时
 
 ---
