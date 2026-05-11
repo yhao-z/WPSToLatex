@@ -58,7 +58,12 @@ function WPSToLatex() {
 
     var horzLines = [];
     for (var r = 1; r <= rows; r++) {
-        horzLines[r] = cellHasBorder(r, 1, xlEdgeBottom);
+        var hasBorder = false;
+        for (var c = 1; c <= cols; c++) {
+            if (cellHasBorder(r, c, xlEdgeBottom)) hasBorder = true;
+            if (r < rows && cellHasBorder(r + 1, c, xlEdgeTop)) hasBorder = true;
+        }
+        horzLines[r] = hasBorder;
     }
     var hasTopBorder = cellHasBorder(1, 1, xlEdgeTop);
 
