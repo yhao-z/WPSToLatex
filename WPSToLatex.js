@@ -195,7 +195,7 @@ function WPSToLatex() {
     var lines = [];
     lines.push("\\begin{table}[htbp]");
     lines.push("  \\centering");
-    lines.push("  \caption{TODO: caption \label{tab:TODO}}");
+    lines.push("  \\caption{TODO: caption \\label{tab:TODO}}");
     lines.push("  \\begin{tabular}" + alignSpec);
 
     if (hasTopBorder) lines.push("    \\toprule");
