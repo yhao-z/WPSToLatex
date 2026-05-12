@@ -5,7 +5,7 @@
  * Requires in preamble: \usepackage{booktabs} \usepackage{multirow}
  */
 
-function WPSToLatex() {
+function WPS2Latex() {
     var sheet = Application.ActiveSheet;
     var sel = Application.Selection;
     var range = sheet.Range(
