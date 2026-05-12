@@ -1,4 +1,4 @@
-# WPSToLatex
+# WPS2Latex
 
 > 将 WPS 表格（Spreadsheet）一键转换为 LaTeX 表格代码 | Convert WPS Spreadsheet tables to LaTeX table code with one click
 
@@ -8,9 +8,9 @@
 
 ## 简介 | Description
 
-**WPSToLatex** 是一个 WPS JS 宏工具，功能与知名的 [Excel2LaTeX](https://ctan.org/pkg/excel2latex) 插件类似。通过加载提供的 `.xlam` 宏文件，您可以在 WPS 表格中将选中的表格区域直接导出为 LaTeX `tabular` 代码，方便插入到 LaTeX 文档中。
+**WPS2Latex** 是一个 WPS JS 宏工具，功能与知名的 [Excel2LaTeX](https://ctan.org/pkg/excel2latex) 插件类似。通过加载提供的 `.xlam` 宏文件，您可以在 WPS 表格中将选中的表格区域直接导出为 LaTeX `tabular` 代码，方便插入到 LaTeX 文档中。
 
-**WPSToLatex** is a WPS JS macro tool, similar to the well-known [Excel2LaTeX](https://ctan.org/pkg/excel2latex) add-in. By loading the provided `.xlam` macro file, you can export selected table ranges in WPS Spreadsheets directly as LaTeX `tabular` code, ready to paste into your LaTeX documents.
+**WPS2Latex** is a WPS JS macro tool, similar to the well-known [Excel2LaTeX](https://ctan.org/pkg/excel2latex) add-in. By loading the provided `.xlam` macro file, you can export selected table ranges in WPS Spreadsheets directly as LaTeX `tabular` code, ready to paste into your LaTeX documents.
 
 ---
 
@@ -29,9 +29,9 @@
 
 ### 第一步：下载宏文件 | Step 1 – Download the macro file
 
-从本仓库的 [Releases](../../releases) 页面下载最新的 `WPSToLatex.xlam` 文件，保存到本地任意目录。
+从本仓库的 [Releases](../../releases) 页面下载最新的 `WPS2Latex.xlam` 文件，保存到本地任意目录。
 
-Download the latest `WPSToLatex.xlam` from the [Releases](../../releases) page and save it to a local directory.
+Download the latest `WPS2Latex.xlam` from the [Releases](../../releases) page and save it to a local directory.
 
 ---
 
@@ -40,19 +40,19 @@ Download the latest `WPSToLatex.xlam` from the [Releases](../../releases) page a
 1. 用 **WPS 表格**（WPS Spreadsheets）打开给定的 `.xlam` 宏文件。
 2. 点击顶部菜单 **工具（Tools）** → **选项（Options）**。
 3. 在弹出的「选项」对话框中，选择左侧的 **自定义功能区（Customize Ribbon）** 选项卡。
-4. 点击对话框上方 **从下列位置选择命令**，点击 **宏**，找到 **WPSToLatex**。
-5. 在「自定义功能区」界面中，将 `WPSToLatex` 相关命令从左侧命令列表拖拽（或通过「添加>>」按钮）添加到右侧的目标选项卡 / 组中。
+4. 点击对话框上方 **从下列位置选择命令**，点击 **宏**，找到 **WPS2Latex**。
+5. 在「自定义功能区」界面中，将 `WPS2Latex` 相关命令从左侧命令列表拖拽（或通过「添加>>」按钮）添加到右侧的目标选项卡 / 组中。
 > 可以添加到已有选项卡中，也可以自己新建
 6. 点击 **确定（OK）** 保存设置。
 
-完成后，您将在 WPS 表格的功能区看到新增的 **WPSToLatex** 按钮。
+完成后，您将在 WPS 表格的功能区看到新增的 **WPS2Latex** 按钮。
 
 ---
 
 ### 第三步：使用宏转换表格 | Step 3 – Convert a table
 
 1. 在 WPS 表格中，**选中**需要转换的表格区域（可包含合并单元格和边框）。
-2. 点击功能区中的 **WPSToLatex** 按钮。
+2. 点击功能区中的 **WPS2Latex** 按钮。
 3. 弹出对话框，**LaTeX 已复制到剪贴板！文本长度：XXX**，成功！
 4. 将代码粘贴到您的 `.tex` 文件中使用。
 
