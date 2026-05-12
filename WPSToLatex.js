@@ -19,7 +19,6 @@ function WPSToLatex() {
     var xlEdgeLeft = 7, xlEdgeTop = 8, xlEdgeBottom = 9, xlEdgeRight = 10;
     var xlNone = -4142;
     var xlHAlignLeft = -4131, xlHAlignCenter = -4108, xlHAlignRight = -4152, xlHAlignGeneral = 1;
-    var xlVAlignTop = -4160, xlVAlignCenter = -4108, xlVAlignBottom = -4107;
 
     function getCell(r, c) {
         return sheet.Range(sel.Cells.Item(r, c), sel.Cells.Item(r, c));
@@ -84,7 +83,7 @@ function WPSToLatex() {
                 skip: false, isFirst: false,
                 rowSpan: 1, colSpan: 1,
                 bold: false, italic: false,
-                hAlign: null, vAlign: "c"
+                hAlign: null
             };
         }
     }
@@ -100,7 +99,7 @@ function WPSToLatex() {
             try { cellInfo[r][c].bold = (cell.Font.Bold === true); } catch(e) {}
             try { cellInfo[r][c].italic = (cell.Font.Italic === true); } catch(e) {}
 
-            // Horizontal Alignment
+            // Alignment
             try {
                 var ha = cell.HorizontalAlignment;
                 if (ha === xlHAlignLeft) cellInfo[r][c].hAlign = "l";
@@ -111,15 +110,6 @@ function WPSToLatex() {
                     cellInfo[r][c].hAlign = (val !== "" && !isNaN(Number(val))) ? "r" : "l";
                 }
             } catch(e) { cellInfo[r][c].hAlign = "l"; }
-
-            // Vertical Alignment (for multirow centering)
-            try {
-                var va = cell.VerticalAlignment;
-                if (va === xlVAlignTop) cellInfo[r][c].vAlign = "t";
-                else if (va === xlVAlignCenter) cellInfo[r][c].vAlign = "c";
-                else if (va === xlVAlignBottom) cellInfo[r][c].vAlign = "b";
-                else cellInfo[r][c].vAlign = "c";
-            } catch(e) { cellInfo[r][c].vAlign = "c"; }
 
             // 合并单元格检测
             if (cell.MergeCells) {
@@ -252,13 +242,8 @@ function WPSToLatex() {
             }
 
             if (info.rowSpan > 1) {
-                // 根据垂直对齐方式选择 multirow 参数
-                // \multirow{nrows}[fixup]{width}{text}
-                // fixup 用于调整垂直位置，正值向上，负值向下
-                var fixup = "";
-                if (info.vAlign === "t") fixup = "[-\\normalbaselineskip]";
-                else if (info.vAlign === "b") fixup = "[\\normalbaselineskip]";
-                cellStr = "\\multirow{" + info.rowSpan + "}" + fixup + "{*}{" + cellStr + "}";
+                // [4] 是 fixup 参数，用于调整 multirow 的垂直居中位置
+                cellStr = "\\multirow{" + info.rowSpan + "}[4]{*}{" + cellStr + "}";
                 // multirow 首单元格如果列右侧有竖线，用 \multicolumn 覆盖
                 if (vertLines[c] && info.colSpan <= 1) {
                     cellStr = "\\multicolumn{1}{c}{" + cellStr + "}";
